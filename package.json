@@ -1,0 +1,28 @@
+{
+  "name": "wiseblock",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "check:content": "rolldown scripts/check-content.ts -f esm -p node -o /tmp/wb-check.mjs && node /tmp/wb-check.mjs",
+    "check:ssr": "rm -rf .ssrtmp && rolldown scripts/ssr-check.ts -f esm -p node -d .ssrtmp --external react --external react-dom/server && node .ssrtmp/ssr-check.js"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  },
+  "description": "WiseBlock - the scam-proof crypto academy for beginners."
+}

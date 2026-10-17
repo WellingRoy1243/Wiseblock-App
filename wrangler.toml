@@ -1,0 +1,13 @@
+# Local verification config for the WiseBlock static site.
+#
+# Used to prove the Worker + static-asset setup works in workerd before a
+# deployment. This mirrors the deployed configuration: the Worker handles every
+# request and delegates to the ASSETS binding.
+name = "wiseblock"
+compatibility_date = "2026-10-17"
+main = "worker.js"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
